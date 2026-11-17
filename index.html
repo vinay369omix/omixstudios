@@ -1,290 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="OMIX STUDIOS — independent software studio building useful Windows, Android apps and original games.">
-<title>OMIX STUDIOS — Software & Games</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="OMIX STUDIOS — independent software and game studio creating Windows, Android apps and original games.">
+<title>OMIX STUDIOS — Apps, Games & Original Ideas</title>
 <style>
-:root{
-  --bg:#f4f1ea;--paper:#fbfaf7;--ink:#111111;--muted:#68655f;--line:#d9d4ca;
-  --accent:#e85d2a;--accent-dark:#b84219;--soft:#eee9df;--white:#fff;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden}
-a{color:inherit}
-.container{width:min(1180px,calc(100% - 40px));margin:auto}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(244,241,234,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(17,17,17,.08)}
-.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:900;letter-spacing:-1px;font-size:22px}
-.brand-mark{width:34px;height:34px;border:2px solid var(--ink);display:grid;place-items:center;font-size:14px;font-weight:900;transform:rotate(-6deg)}
-.brand span{color:var(--accent)}
-.nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{text-decoration:none;font-size:14px;color:#45423d;font-weight:600}
-.nav-links a:hover{color:var(--accent)}
-.nav-button{padding:10px 18px;border:1px solid var(--ink);border-radius:999px}
-.hero{padding:170px 0 110px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-220px;top:80px;background:radial-gradient(circle,rgba(232,93,42,.15),transparent 68%);pointer-events:none}
-.kicker{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:25px}
-.kicker:before{content:"";width:28px;height:2px;background:var(--accent)}
-h1{font-size:clamp(52px,8vw,104px);line-height:.93;letter-spacing:-6px;max-width:930px;font-weight:950}
-h1 em{font-style:normal;color:var(--accent)}
-.hero-copy{max-width:650px;color:var(--muted);font-size:18px;margin:28px 0 34px}
-.actions{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 21px;border-radius:999px;text-decoration:none;font-weight:800;font-size:14px}
-.btn-primary{background:var(--ink);color:var(--white)}
-.btn-primary:hover{background:#292929}
-.btn-secondary{border:1px solid var(--ink);background:transparent}
-.btn-secondary:hover{background:var(--white)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:82px}
-.stat{padding:25px 20px 25px 0;border-right:1px solid var(--line)}
-.stat:not(:first-child){padding-left:24px}
-.stat:last-child{border-right:0}
-.stat strong{display:block;font-size:32px;letter-spacing:-1px}
-.stat span{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1.3px}
-section{padding:110px 0}
-.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:45px}
-.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:900;margin-bottom:13px}
-h2{font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-3px}
-.lead{max-width:520px;color:var(--muted)}
-.apps{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:30px;position:relative;overflow:hidden;transition:.25s transform,.25s box-shadow}
-.card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(40,34,25,.10)}
-.card.large{grid-column:span 7;min-height:350px}
-.card.small{grid-column:span 5;min-height:350px}
-.card.full{grid-column:span 12}
-.card-tag{font-size:10px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
-.card-icon{font-size:38px;margin:28px 0 18px}
-.card h3{font-size:28px;letter-spacing:-1px;margin-bottom:10px}
-.card p{color:var(--muted);max-width:570px;font-size:15px}
-.card .store{display:inline-flex;margin-top:22px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-size:12px;font-weight:800}
-.card .store:hover{border-color:var(--accent);color:var(--accent)}
-.metrics{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px}
-.metric strong{display:block;font-size:24px;letter-spacing:-.7px}
-.metric span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:800}
-.game-card{background:#151515;color:#f8f5ef;border-color:#151515}
-.game-card p,.game-card .card-tag{color:#aaa59c}
-.game-card .store{border-color:#444}
-.game-card .store:hover{border-color:var(--accent);color:#ff8b61}
-.feature{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:stretch}
-.feature-copy{background:var(--ink);color:#f8f5ef;border-radius:24px;padding:55px}
-.feature-copy .eyebrow{color:#ff8b61}
-.feature-copy h2{margin-bottom:22px}
-.feature-copy p{color:#aaa59c;font-size:16px}
-.feature-list{list-style:none;margin-top:30px;display:grid;gap:13px}
-.feature-list li{padding:12px 0;border-bottom:1px solid #333;display:flex;gap:12px;font-size:14px}
-.feature-list li:before{content:"✓";color:#ff8b61;font-weight:900}
-.showcase{border:1px solid var(--line);border-radius:24px;background:var(--paper);padding:34px;display:flex;flex-direction:column;justify-content:space-between}
-.showcase-top{display:flex;justify-content:space-between;gap:15px}
-.pill{border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
-.showcase-title{font-size:clamp(38px,6vw,74px);font-weight:950;letter-spacing:-5px;line-height:.9;margin:50px 0}
-.showcase-title span{color:var(--accent)}
-.showcase p{color:var(--muted);font-size:14px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-.service{padding:28px 25px 30px 0;border-bottom:1px solid var(--line)}
-.service:nth-child(3n+2),.service:nth-child(3n){padding-left:25px}
-.service:nth-child(3n+1),.service:nth-child(3n+2){border-right:1px solid var(--line)}
-.service-icon{font-size:24px;margin-bottom:18px}
-.service h3{font-size:18px;margin-bottom:7px}
-.service p{color:var(--muted);font-size:14px}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:70px}
-.about p{color:var(--muted);font-size:16px;margin-bottom:18px}
-.principles{display:grid;gap:12px}
-.principle{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:19px 20px}
-.principle strong{display:block;margin-bottom:3px}
-.principle span{font-size:13px;color:var(--muted)}
-.contact{background:var(--accent);color:#fff;border-radius:26px;padding:65px;text-align:center}
-.contact .eyebrow{color:#ffe1d4}
-.contact h2{max-width:720px;margin:auto}
-.contact p{max-width:560px;margin:20px auto 30px;color:#fff1ea}
-.contact .btn-primary{background:#fff;color:#111}
-.contact .btn-secondary{border-color:#fff;color:#fff}
-footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
-.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.footer-links{display:flex;gap:20px}
-.footer-links a{text-decoration:none}
-.footer-links a:hover{color:var(--accent)}
-@media(max-width:800px){
-  .container{width:min(100% - 28px,1180px)}
-  .nav-links{display:none}
-  .hero{padding-top:130px}
-  h1{letter-spacing:-3px}
-  .stats{grid-template-columns:1fr 1fr}
-  .stat:nth-child(2){border-right:0}
-  .stat:nth-child(3){border-top:1px solid var(--line)}
-  .stat:nth-child(4){border-top:1px solid var(--line);border-right:0}
-  .section-head{display:block}
-  .lead{margin-top:18px}
-  .card.large,.card.small,.card.full{grid-column:span 12}
-  .feature,.about{grid-template-columns:1fr}
-  .services{grid-template-columns:1fr}
-  .service,.service:nth-child(3n+2),.service:nth-child(3n){padding:25px 0;border-right:0}
-  .contact{padding:45px 22px}
-}
+:root{--bg:#07090d;--panel:#10141c;--panel2:#0c1118;--text:#f5f7fb;--muted:#98a2b3;--line:rgba(255,255,255,.10);--red:#ff2d20;--orange:#ff8a00;--cyan:#16d9ff;--green:#32e48f;--purple:#8c6cff}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:radial-gradient(circle at 20% 0%,rgba(255,45,32,.08),transparent 30%),radial-gradient(circle at 85% 15%,rgba(22,217,255,.07),transparent 28%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;overflow-x:hidden}a{color:inherit}.wrap{width:min(1240px,calc(100% - 36px));margin:auto}
+nav{position:fixed;z-index:50;top:0;left:0;right:0;background:rgba(7,9,13,.76);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.logo{height:48px;width:auto}.links{display:flex;gap:28px;align-items:center}.links a{text-decoration:none;color:#c7ced9;font-size:14px;font-weight:700}.links a:hover{color:#fff}.contact-btn{padding:10px 18px;border:1px solid rgba(255,255,255,.25);border-radius:999px}
+.hero{padding:145px 0 75px;position:relative}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center}.eyebrow{color:#ff5b40;font-size:11px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase}.eyebrow:before{content:"";display:inline-block;width:28px;height:2px;background:var(--red);vertical-align:middle;margin-right:10px}
+h1{font-size:clamp(50px,8vw,102px);line-height:.88;letter-spacing:-6px;margin:20px 0 25px;font-weight:950}h1 span{background:linear-gradient(90deg,#ff3024,#ff8a00,#ffd34d);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:18px;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.btn{padding:14px 21px;border-radius:999px;text-decoration:none;font-size:13px;font-weight:900}.primary{background:linear-gradient(90deg,var(--red),#ff741f);color:#fff;box-shadow:0 12px 35px rgba(255,45,32,.22)}.secondary{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
+.hero-art{min-height:430px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,#121824,#07090d);position:relative;overflow:hidden;box-shadow:0 30px 100px rgba(0,0,0,.35)}.hero-art:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-80px;top:-70px;background:radial-gradient(circle,rgba(255,45,32,.35),transparent 65%)}.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.05) 50%,transparent 70%);transform:skewX(-15deg)}
+.art-city{position:absolute;inset:auto 25px 24px;height:260px;background:linear-gradient(to top,#05070b,transparent);display:flex;align-items:end;gap:8px}.b{background:linear-gradient(#283548,#111722);width:8%;height:var(--h);border:1px solid #334258}.car{position:absolute;bottom:45px;left:25%;width:48%;height:42px;background:linear-gradient(#ff503c,#7f1714);border-radius:12px 18px 7px 7px;box-shadow:0 0 35px rgba(255,45,32,.45)}.car:before,.car:after{content:"";position:absolute;bottom:-8px;width:18px;height:18px;background:#08090d;border:2px solid #555;border-radius:50%}.car:before{left:12px}.car:after{right:12px}.heli{position:absolute;right:13%;top:24%;font-size:54px;filter:drop-shadow(0 0 16px rgba(22,217,255,.55));transform:rotate(-8deg)}.badge{position:absolute;left:25px;top:24px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.35);padding:8px 12px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:1.4px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:70px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{padding:24px 20px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat strong{font-size:31px;display:block;letter-spacing:-1px}.stat span{font-size:10px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:1.2px}
+section{padding:95px 0}.section-head{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:38px}.section-head h2{font-size:clamp(34px,5vw,62px);line-height:.95;letter-spacing:-3px}.section-head p{max-width:510px;color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.card{grid-column:span 6;min-height:360px;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--panel);position:relative;transition:.25s transform,.25s border-color,.25s box-shadow}.card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.24);box-shadow:0 25px 70px rgba(0,0,0,.3)}.card.big{grid-column:span 7}.card.side{grid-column:span 5}.card.game{grid-column:span 12;min-height:390px}.visual{height:190px;position:relative;overflow:hidden}.pc{background:radial-gradient(circle at 72% 35%,rgba(22,217,255,.35),transparent 30%),linear-gradient(135deg,#06141f,#0a2435 45%,#091018)}.pro{background:radial-gradient(circle at 72% 35%,rgba(255,45,32,.38),transparent 30%),linear-gradient(135deg,#17090b,#33100f 48%,#0d0d12)}.ipo{background:linear-gradient(135deg,#061b18,#07362b 45%,#091117)}.tiger{background:radial-gradient(circle at 68% 45%,rgba(255,153,0,.45),transparent 32%),linear-gradient(135deg,#151005,#35220b 55%,#10130d)}.city{height:220px;background:linear-gradient(180deg,#100d25,#1b3154 52%,#090b12 53%,#10141b)}.visual .title{position:absolute;left:22px;bottom:18px;font-size:30px;font-weight:950;letter-spacing:-1.5px}.visual .sub{position:absolute;left:24px;top:20px;font-size:9px;font-weight:900;letter-spacing:2px;color:rgba(255,255,255,.72)}.screen{position:absolute;right:20px;bottom:15px;width:58%;height:135px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:rgba(4,8,12,.78);transform:perspective(700px) rotateY(-12deg);padding:13px}.screen .ring{width:70px;height:70px;border:7px solid #14dca0;border-right-color:transparent;border-radius:50%;margin:auto}.screen .bars{display:flex;gap:5px;margin-top:9px}.screen .bars i{height:7px;flex:1;background:#19cfff;border-radius:5px}.pro .ring{border-color:#ff5a36;border-right-color:transparent}.pro .bars i{background:#ff4133}.phone{position:absolute;right:30px;bottom:-12px;width:130px;height:205px;border:5px solid #0a0d10;border-radius:22px;background:#101a23;box-shadow:0 20px 35px rgba(0,0,0,.4);padding:12px}.phone .chart{height:85px;background:linear-gradient(180deg,transparent,#0b4);clip-path:polygon(0 75%,18% 55%,30% 66%,45% 35%,58% 48%,75% 20%,100% 5%,100% 100%,0 100%);opacity:.8}.coin{font-size:40px;color:#ffd45a}.tiger-art{position:absolute;right:20px;bottom:5px;font-size:100px;filter:drop-shadow(0 0 15px rgba(255,140,0,.5))}.city-person{position:absolute;left:28%;bottom:20px;font-size:110px}.city-car{position:absolute;right:12%;bottom:25px;font-size:50px}.city-heli{position:absolute;right:8%;top:28px;font-size:45px}.card-body{padding:25px 27px 29px}.tag{font-size:9px;color:#8f99aa;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}.card h3{font-size:27px;letter-spacing:-1px;margin:7px 0 8px}.card p{color:var(--muted);font-size:14px}.metrics{display:flex;gap:25px;margin-top:18px;flex-wrap:wrap}.metrics strong{display:block;font-size:20px}.metrics span{display:block;font-size:9px;color:#7f8999;font-weight:900;text-transform:uppercase;letter-spacing:1px}.store{display:inline-block;margin-top:20px;padding:9px 13px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-size:10px;font-weight:900}.store:hover{border-color:var(--red);color:#ff654e}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{border:1px solid var(--line);border-radius:24px;padding:38px;background:linear-gradient(145deg,var(--panel),var(--panel2))}.panel h3{font-size:28px;margin-bottom:12px}.panel p{color:var(--muted);font-size:15px}.list{display:grid;gap:12px;margin-top:25px}.list div{padding:15px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px}.list span{color:var(--muted);font-size:13px}.contact{border-radius:28px;padding:60px;text-align:center;background:linear-gradient(135deg,#2a0b0d,#14141b 48%,#07151e);border:1px solid var(--line)}.contact h2{font-size:clamp(35px,6vw,65px);line-height:.95;letter-spacing:-3px;margin:12px auto 18px;max-width:780px}.contact p{color:var(--muted);max-width:560px;margin:auto}
+footer{padding:28px 0;border-top:1px solid var(--line);color:#707a8b;font-size:11px}.foot{display:flex;justify-content:space-between;gap:20px}.foot a{text-decoration:none;margin-left:20px}
+@media(max-width:850px){.links{display:none}.hero-grid,.about{grid-template-columns:1fr}.hero-art{min-height:330px}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-top:1px solid var(--line)}.stat:nth-child(3){border-right:1px solid var(--line)}.section-head{display:block}.section-head p{margin-top:16px}.card,.card.big,.card.side,.card.game{grid-column:span 12}.contact{padding:40px 20px}.foot{display:block}.foot a{margin:0 15px 0 0}}
 </style>
 </head>
 <body>
-<nav>
-  <div class="container nav-inner">
-    <a class="brand" href="#"><div class="brand-mark">O</div>OMIX<span>.</span>STUDIOS</a>
-    <div class="nav-links">
-      <a href="#apps">Apps</a><a href="#games">Games</a><a href="#services">Services</a><a href="#about">About</a>
-      <a class="nav-button" href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
+<nav><div class="wrap nav"><a href="#" aria-label="OMIX STUDIOS"><img class="logo" src="assets/omix-logo.svg" alt="OMIX STUDIOS"></a><div class="links"><a href="#apps">Apps</a><a href="#games">Games</a><a href="#about">About</a><a href="#contact" class="contact-btn">Contact</a></div></div></nav>
 
-<header class="hero">
-  <div class="container">
-    <div class="kicker">Independent software studio</div>
-    <h1>Useful software.<br><em>Original ideas.</em></h1>
-    <p class="hero-copy">OMIX STUDIOS builds practical Windows and Android apps, plus original games — designed to be simple, useful and ready for real users.</p>
-    <div class="actions">
-      <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9NW5DMR2XQ36" target="_blank">Explore PC Smart Utility ↗</a>
-      <a class="btn btn-secondary" href="#apps">View portfolio</a>
-    </div>
-    <div class="stats">
-      <div class="stat"><strong>6K+</strong><span>PC Smart Utility installs</span></div>
-      <div class="stat"><strong>4.80/5</strong><span>Store rating</span></div>
-      <div class="stat"><strong>$93+</strong><span>Pro gross revenue</span></div>
-      <div class="stat"><strong>100+</strong><span>IPO Master Guide users</span></div>
-    </div>
-  </div>
-</header>
+<header class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Independent software & game studio</div><h1>Build. Ship.<br><span>Make it useful.</span></h1><p>OMIX STUDIOS creates practical Windows and Android apps plus original games — focused on real users, clean experiences and products that keep getting better.</p><div class="actions"><a class="btn primary" href="https://apps.microsoft.com/detail/9NW5DMR2XQ36" target="_blank">Explore PC Smart Utility ↗</a><a class="btn secondary" href="#apps">Explore the portfolio</a></div></div><div class="hero-art"><div class="badge">OMIX ORIGINALS · 2026</div><div class="heli">🚁</div><div class="art-city"><i class="b" style="--h:55%"></i><i class="b" style="--h:72%"></i><i class="b" style="--h:43%"></i><i class="b" style="--h:82%"></i><i class="b" style="--h:62%"></i><i class="b" style="--h:92%"></i><i class="b" style="--h:48%"></i><i class="b" style="--h:70%"></i><i class="b" style="--h:58%"></i><i class="b" style="--h:77%"></i></div><div class="car"></div></div></div>
+<div class="wrap"><div class="stats"><div class="stat"><strong>6K+</strong><span>PC Smart Utility global installs</span></div><div class="stat"><strong>4.80/5</strong><span>Store rating</span></div><div class="stat"><strong>$93+</strong><span>Pro gross revenue</span></div><div class="stat"><strong>50+</strong><span>IPO Master Guide users</span></div></div></div></header>
 
-<main>
-<section id="apps">
-<div class="container">
-<div class="section-head"><div><div class="eyebrow">Portfolio</div><h2>Products people can use.</h2></div><p class="lead">A growing portfolio across Windows and Android, with a focus on useful tools, clean interfaces and original product ideas.</p></div>
-<div class="apps">
-  <article class="card large">
-    <div class="card-tag">Windows · Microsoft Store · Live</div>
-    <div class="card-icon">▣</div>
-    <h3>PC Smart Utility</h3>
-    <p>Windows system utility focused on practical PC information, maintenance and everyday diagnostics — built for users who want a clearer view of their machine.</p>
-    <div class="metrics">
-      <div class="metric"><strong>6K+</strong><span>global installs</span></div>
-      <div class="metric"><strong>4.80</strong><span>rating</span></div>
-      <div class="metric"><strong>$10</strong><span>contribution</span></div>
-    </div>
-    <a class="store" href="https://apps.microsoft.com/detail/9NW5DMR2XQ36" target="_blank">Open Microsoft Store ↗</a>
-  </article>
+<main><section id="apps"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Products</div><h2>Tools people actually use.</h2></div><p>From Windows utilities to finance tools and games, every OMIX product has a clear purpose and a distinct identity.</p></div>
+<div class="products">
+<article class="card big"><div class="visual pc"><div class="sub">WINDOWS · LIVE</div><div class="title">PC Smart Utility</div><div class="screen"><div class="ring"></div><div class="bars"><i></i><i></i><i></i></div></div></div><div class="card-body"><div class="tag">Windows · Microsoft Store</div><p>Practical PC cleanup, diagnostics, optimization and everyday system tools in one lightweight utility.</p><div class="metrics"><div><strong>6K+</strong><span>global installs</span></div><div><strong>4.80</strong><span>rating</span></div><div><strong>$10</strong><span>contribution</span></div></div><a class="store" href="https://apps.microsoft.com/detail/9NW5DMR2XQ36" target="_blank">Open Microsoft Store ↗</a></div></article>
 
-  <article class="card small">
-    <div class="card-tag">Windows · Microsoft Store · Pro</div>
-    <div class="card-icon">◈</div>
-    <h3>PC Smart Utility Pro</h3>
-    <p>Expanded Pro edition for users who want more from their Windows maintenance toolkit.</p>
-    <div class="metrics"><div class="metric"><strong>$93</strong><span>gross revenue</span></div></div>
-    <a class="store" href="https://apps.microsoft.com/detail/9NW5DMR2XQ36" target="_blank">View on Microsoft Store ↗</a>
-  </article>
+<article class="card side"><div class="visual pro"><div class="sub">WINDOWS · PRO</div><div class="title">PC Smart Utility Pro</div><div class="screen"><div class="ring"></div><div class="bars"><i></i><i></i><i></i></div></div></div><div class="card-body"><div class="tag">Premium edition</div><p>Advanced PC care for users who want more performance, diagnostics and control.</p><div class="metrics"><div><strong>$93+</strong><span>gross revenue</span></div></div><a class="store" href="https://apps.microsoft.com/detail/9NW5DMR2XQ36" target="_blank">View Store ↗</a></div></article>
 
-  <article class="card small">
-    <div class="card-tag">Android · Google Play · Live</div>
-    <div class="card-icon">◆</div>
-    <h3>IPO Master Guide</h3>
-    <p>Indian IPO companion covering IPO information, GMP, allotment concepts and listing-focused guidance for retail users.</p>
-    <div class="metrics"><div class="metric"><strong>100+</strong><span>users</span></div></div>
-    <a class="store" href="https://play.google.com/store/apps/details?id=ipo.master" target="_blank">Open Google Play ↗</a>
-  </article>
+<article class="card side"><div class="visual ipo"><div class="sub">ANDROID · LIVE</div><div class="title">IPO Master Guide</div><div class="phone"><div class="coin">₹</div><div class="chart"></div></div></div><div class="card-body"><div class="tag">Finance · IPO companion</div><p>IPO information, GMP, allotment concepts and listing-focused guidance for retail users.</p><div class="metrics"><div><strong>50+</strong><span>users</span></div></div><a class="store" href="https://play.google.com/" target="_blank">Explore app ↗</a></div></article>
 
-  <article class="card small">
-    <div class="card-tag">Games · Original IP · Building</div>
-    <div class="card-icon">✦</div>
-    <h3>Tiger House</h3>
-    <p>An original modern take on the traditional Pulijudam strategy game, built around a focused board-game experience.</p>
-    <span class="store">In development</span>
-  </article>
+<article class="card side"><div class="visual tiger"><div class="sub">ORIGINAL GAME</div><div class="title">Tiger House</div><div class="tiger-art">🐅</div></div><div class="card-body"><div class="tag">Pulijudam strategy game</div><p>An original take on the traditional tiger-and-goat strategy game with a focused board-game experience.</p><span class="store">Original IP · In development</span></div></article>
 
-  <article class="card full game-card" id="games">
-    <div class="card-tag">Windows · Original 3D game · Microsoft Store</div>
-    <div class="card-icon">✹</div>
-    <h3>GTEEAA CITY 6</h3>
-    <p>An original lightweight 3D open-world action game from OMIX STUDIOS, with city exploration, driving, missions, combat, boats, helicopters and an original story world.</p>
-    <a class="store" href="https://apps.microsoft.com/detail/9N13CM8F1XP1" target="_blank">View GTEEAA CITY 6 ↗</a>
-  </article>
-</div>
-</div>
-</section>
+<article class="card game" id="games"><div class="visual city"><div class="sub">WINDOWS · ORIGINAL 3D GAME</div><div class="title">GTEEAA CITY 6</div><div class="city-person">🕴️</div><div class="city-car">🏎️</div><div class="city-heli">🚁</div></div><div class="card-body"><div class="tag">Open-world action · Microsoft Store</div><p>Explore an original 3D city with driving, story missions, combat, boats, helicopters and an original game world from OMIX STUDIOS.</p><a class="store" href="https://apps.microsoft.com/detail/9N13CM8F1XP1" target="_blank">View GTEEAA CITY 6 ↗</a></div></article>
+</div></div></section>
 
-<section>
-<div class="container feature">
-  <div class="feature-copy">
-    <div class="eyebrow">What we build</div>
-    <h2>From utility tools to original worlds.</h2>
-    <p>OMIX STUDIOS is built around one idea: ship products that have a clear purpose instead of filling screens with unnecessary complexity.</p>
-    <ul class="feature-list">
-      <li>Windows desktop applications</li>
-      <li>Android applications</li>
-      <li>Original games and interactive experiences</li>
-      <li>Microsoft Store & Google Play publishing</li>
-      <li>Post-launch updates and product iteration</li>
-    </ul>
-  </div>
-  <div class="showcase">
-    <div class="showcase-top"><span class="pill">Current focus</span><span class="pill">2026</span></div>
-    <div class="showcase-title">BUILD<br><span>→ SHIP</span><br>REPEAT.</div>
-    <p>Every release is an opportunity to improve the product, listen to users and build the next version better.</p>
-  </div>
-</div>
-</section>
+<section id="about"><div class="wrap about"><div class="panel"><div class="eyebrow">Why OMIX</div><h3>Small studio. Serious releases.</h3><p>OMIX STUDIOS builds software and games with a simple approach: solve a problem, ship a useful product, listen to users and improve it.</p><div class="list"><div><b>Original products</b><span>Distinct ideas & branding</span></div><div><b>Store-ready</b><span>Windows & Android distribution</span></div><div><b>Continuous updates</b><span>Features, fixes & polish</span></div></div></div><div class="panel"><div class="eyebrow">Studio focus</div><h3>Apps + Games + Experiments.</h3><p>OMIX spans practical utilities, finance-focused apps and original interactive experiences.</p><div class="list"><div><b>Windows</b><span>Desktop utilities & games</span></div><div><b>Android</b><span>Consumer apps</span></div><div><b>Original IP</b><span>Characters, worlds & gameplay</span></div></div></div></div></section>
 
-<section id="services">
-<div class="container">
-<div class="section-head"><div><div class="eyebrow">Capabilities</div><h2>What we do.</h2></div><p class="lead">A compact studio covering product development from idea to store release.</p></div>
-<div class="services">
-  <div class="service"><div class="service-icon">▣</div><h3>Windows Development</h3><p>Electron-based desktop products, Windows packaging and Microsoft Store releases.</p></div>
-  <div class="service"><div class="service-icon">◆</div><h3>Android Development</h3><p>Android applications designed for straightforward everyday use and Play Store distribution.</p></div>
-  <div class="service"><div class="service-icon">✦</div><h3>Original Games</h3><p>Lightweight games with original characters, worlds, mechanics and stories.</p></div>
-  <div class="service"><div class="service-icon">↗</div><h3>Store Publishing</h3><p>Product pages, ratings, packages, screenshots, trailers and release management.</p></div>
-  <div class="service"><div class="service-icon">⚙</div><h3>Product Updates</h3><p>Bug fixes, performance improvements, new features and post-launch iteration.</p></div>
-  <div class="service"><div class="service-icon">⌁</div><h3>Product Experiments</h3><p>Testing new ideas, pricing, positioning and features to find what users actually value.</p></div>
-</div>
-</div>
-</section>
+<section id="contact"><div class="wrap"><div class="contact"><div class="eyebrow">Contact OMIX STUDIOS</div><h2>Have an idea worth building?</h2><p>For collaborations, partnerships, product feedback or business enquiries, reach out to the studio.</p><div class="actions" style="justify-content:center"><a class="btn primary" href="mailto:vinaykumarvr33@gmail.com">Email OMIX STUDIOS</a><a class="btn secondary" href="https://github.com/vinay369omix" target="_blank">GitHub ↗</a></div></div></div></section></main>
 
-<section id="about">
-<div class="container about">
-  <div>
-    <div class="eyebrow">About OMIX STUDIOS</div>
-    <h2>Small studio.<br>Big ambition.</h2>
-    <p style="margin-top:24px">OMIX STUDIOS is an independent software studio founded by Vinay Kumar, based in Bengaluru, India. The studio develops Windows and Android products and original games, with a strong focus on practical software and accessible experiences.</p>
-    <p>Products are shipped through established app stores so users can discover, install and update them through familiar distribution channels.</p>
-  </div>
-  <div class="principles">
-    <div class="principle"><strong>Original by design</strong><span>Original branding, product concepts and game worlds.</span></div>
-    <div class="principle"><strong>Useful first</strong><span>Features are built around clear user problems and practical outcomes.</span></div>
-    <div class="principle"><strong>Privacy conscious</strong><span>Products are designed to keep data collection to what is actually needed.</span></div>
-    <div class="principle"><strong>Ship and improve</strong><span>Launch, learn from users, fix issues and keep building.</span></div>
-  </div>
-</div>
-</section>
-
-<section id="contact">
-<div class="container">
-<div class="contact">
-<div class="eyebrow">Contact</div>
-<h2>Have an idea or want to work together?</h2>
-<p>For product feedback, collaborations, partnerships or business enquiries, get in touch with OMIX STUDIOS.</p>
-<div class="actions" style="justify-content:center">
-<a class="btn btn-primary" href="mailto:vinaykumarvr33@gmail.com">Email OMIX STUDIOS</a>
-<a class="btn btn-secondary" href="https://github.com/vinay369omix" target="_blank">GitHub ↗</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-
-<footer>
-<div class="container footer-inner">
-<div>© 2026 OMIX STUDIOS · Bengaluru, India</div>
-<div class="footer-links">
-<a href="https://vinay369omix.github.io/privacy-policy/" target="_blank">Privacy Policy</a>
-<a href="https://github.com/vinay369omix/omixstudios" target="_blank">Source ↗</a>
-<a href="mailto:vinaykumarvr33@gmail.com">Contact</a>
-</div>
-</div>
-</footer>
-</body>
-</html>
+<footer><div class="wrap foot"><div>© 2026 OMIX STUDIOS · Bengaluru, India</div><div><a href="https://vinay369omix.github.io/privacy-policy/" target="_blank">Privacy</a><a href="https://github.com/vinay369omix/omixstudios" target="_blank">GitHub</a><a href="mailto:vinaykumarvr33@gmail.com">Contact</a></div></div></footer>
+</body></html>
