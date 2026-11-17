@@ -121,6 +121,34 @@ footer{background:#111;color:#777;padding:29px 0;font-size:11px}
   .contact h2{letter-spacing:-5px}
   .foot{display:block}.foot div+div{margin-top:12px}.foot a{margin:0 18px 0 0}
 }
+ 
+.hero{min-height:calc(100vh - 78px);padding:54px 0 60px;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(440px,.82fr);gap:70px;align-items:center;width:100%}
+.hero-copy{padding:10px 0}
+h1{font-size:clamp(54px,7vw,104px);line-height:.91;letter-spacing:-5px;font-weight:950;margin:22px 0 28px;max-width:820px}
+h1 span{color:var(--orange)}
+.lead{max-width:680px;color:#55524e;font-size:18px;line-height:1.72}
+.hero-points{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px;max-width:680px}
+.hero-points div{border-top:1px solid var(--line);padding-top:12px}
+.hero-points b{display:block;color:var(--orange);font-size:10px;letter-spacing:1px;margin-bottom:7px}
+.hero-points span{font-size:11px;font-weight:800;color:#333}
+.hero-showcase{display:grid;grid-template-columns:1.45fr .72fr;gap:14px;min-height:520px}
+.showcase-main,.mini-card{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.showcase-main{position:relative;min-height:520px;box-shadow:0 24px 70px rgba(0,0,0,.08)}
+.showcase-main img{width:100%;height:100%;object-fit:cover;display:block}
+.showcase-label{position:absolute;left:18px;right:18px;bottom:18px;background:rgba(17,17,19,.93);color:#fff;border-radius:16px;padding:15px 17px}
+.showcase-label span{display:block;color:#ff815c;text-transform:uppercase;letter-spacing:2px;font-size:8px;font-weight:900;margin-bottom:5px}
+.showcase-label b{font-size:17px}
+.showcase-side{display:grid;grid-template-rows:1fr 1fr;gap:14px}
+.mini-card{padding:14px;display:flex;flex-direction:column;justify-content:flex-end}
+.mini-card img{width:100%;height:180px;object-fit:cover;border-radius:14px;margin-bottom:15px}
+.mini-card b{font-size:14px}
+.mini-card span{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.4}
+.dark-mini{background:#111;color:#fff;border-color:#111}
+.dark-mini span{color:#999}
+.mini-game{height:180px;border-radius:14px;background:radial-gradient(circle at 70% 30%,#ff7137,#351715 42%,#111 78%);display:flex;align-items:center;justify-content:center;font-size:62px;font-weight:950;letter-spacing:-6px;color:#fff;margin-bottom:15px}
+@media(max-width:900px){.hero{min-height:auto}.hero-grid{grid-template-columns:1fr;gap:45px}.hero-showcase{min-height:430px}.showcase-main{min-height:430px}.hero-points{max-width:none}}
+@media(max-width:620px){.hero{padding:45px 0 60px}h1{font-size:52px;letter-spacing:-4px}.lead{font-size:16px}.hero-points{grid-template-columns:1fr;gap:10px}.hero-showcase{grid-template-columns:1fr;min-height:auto}.showcase-main{min-height:330px}.showcase-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}.mini-card img,.mini-game{height:130px}.mini-card{padding:10px}.mini-card b{font-size:11px}}
 </style>
 </head>
 <body>
@@ -141,14 +169,28 @@ footer{background:#111;color:#777;padding:29px 0;font-size:11px}
   <div class="shell hero-grid">
     <div class="hero-copy">
       <div class="eyebrow">Independent software studio</div>
-      <h1>Useful software.<br><span>Original games.</span></h1>
-      <p class="lead">OMIX STUDIOS builds practical Windows and Android products and original games — taking ideas from first concept to a real release.</p>
+      <h1>Software made for<br><span>real people.</span></h1>
+      <p class="lead">OMIX STUDIOS creates practical Windows and Android apps, alongside original games built from our own ideas. We turn useful concepts into products people can actually download, use and play.</p>
       <div class="actions">
-        <a class="btn dark" href="#products">Explore products ↓</a>
-        <a class="btn light" href="https://apps.microsoft.com/detail/9NW5DMR2XQ36" target="_blank" rel="noopener">Microsoft Store ↗</a>
+        <a class="btn dark" href="#products">Explore our products ↓</a>
+        <a class="btn light" href="#games">See our games →</a>
+      </div>
+      <div class="hero-points">
+        <div><b>01</b><span>Useful software</span></div>
+        <div><b>02</b><span>Original game worlds</span></div>
+        <div><b>03</b><span>Products shipped to real users</span></div>
       </div>
     </div>
-    <div class="hero-note">Independent products, original game worlds and software designed to be useful in the real world.</div>
+    <div class="hero-showcase">
+      <div class="showcase-main">
+        <img src="assets/pc-smart-utility.svg" alt="PC Smart Utility">
+        <div class="showcase-label"><span>Featured software</span><b>PC Smart Utility</b></div>
+      </div>
+      <div class="showcase-side">
+        <div class="mini-card"><img src="assets/pc-smart-pro.svg" alt="PC Smart Utility Pro"><b>PC Smart Utility Pro</b><span>Premium Windows tools</span></div>
+        <div class="mini-card dark-mini"><div class="mini-game">G6</div><b>GTEEAA CITY 6</b><span>Original open-world game</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
